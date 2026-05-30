@@ -1,0 +1,98 @@
+@model QuanLyNhanVien.ViewModels.NhanVienIndexViewModel
+@using QuanLyNhanVien.Enums
+
+@{
+    ViewData["Title"] = "Danh sach nhan vien";
+    var strSortTen = Model.strSortOrder == "ten_asc" ? "ten_desc" : "ten_asc";
+}
+
+<h2 class="mb-3">Danh sach nhan vien</h2>
+
+<form method="get" asp-action="Index" class="mb-3">
+    <div class="row g-2 align-items-end">
+        <div class="col-md-3">
+            <label class="form-label">Ten nhan vien</label>
+            <input type="text" name="strTen" value="@Model.strTen" class="form-control" placeholder="Nhap ten..." />
+        </div>
+        <div class="col-md-2">
+            <label class="form-label">Phong ban</label>
+            <select name="intMaPhongBan" asp-items="ViewBag.objSelectPhongBan" class="form-select">
+                <option value="">-- Tat ca --</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label class="form-label">Nam sinh</label>
+            <input type="number" name="intNamSinh" value="@Model.intNamSinh" class="form-control" placeholder="VD: 1995" />
+        </div>
+        <div class="col-md-2">
+            <label class="form-label">Gioi tinh</label>
+            <select name="boolGioiTinh" asp-items="ViewBag.objSelectGioiTinh" class="form-select">
+                <option value="">-- Tat ca --</option>
+            </select>
+        </div>
+        <div class="col-md-1">
+            <button type="submit" class="btn btn-primary w-100">Loc</button>
+        </div>
+        <div class="col-md-1">
+            <a asp-action="Index" class="btn btn-secondary w-100">Xoa loc</a>
+        </div>
+        <input type="hidden" name="strSortOrder" value="@Model.strSortOrder" />
+    </div>
+</form>
+
+<div class="mb-3">
+    <a asp-action="Create" class="btn btn-success">+ Them nhan vien</a>
+</div>
+
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Ma</th>
+            <th>
+                <a asp-action="Index"
+                   asp-route-strTen="@Model.strTen"
+                   asp-route-intMaPhongBan="@Model.intMaPhongBan"
+                   asp-route-intNamSinh="@Model.intNamSinh"
+                   asp-route-boolGioiTinh="@Model.boolGioiTinh"
+                   asp-route-strSortOrder="@strSortTen"
+                   class="text-white text-decoration-none">
+                    Ten nhan vien @(Model.strSortOrder == "ten_asc" ? "↑" : "↓")
+                </a>
+            </th>
+            <th>Nam sinh</th>
+            <th>Gioi tinh</th>
+            <th>Luong</th>
+            <th>Trang thai</th>
+            <th>Phong ban</th>
+            <th>Hanh dong</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.lstNhanVien.Any())
+        {
+            <tr>
+                <td colspan="8" class="text-center text-muted">Khong co nhan vien nao.</td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var objNhanVien in Model.lstNhanVien)
+            {
+                <tr>
+                    <td>@objNhanVien.intMaNhanVien</td>
+                    <td>@objNhanVien.strTenNhanVien</td>
+                    <td>@objNhanVien.intNamSinh</td>
+                    <td>@(objNhanVien.boolGioiTinh ? "Nam" : "Nu")</td>
+                    <td>@objNhanVien.dblLuong.ToString("N0") VND</td>
+                    <td>@((TrangThaiNhanVien)objNhanVien.intTrangThai)</td>
+                    <td>@objNhanVien.objPhongBan?.strTenPhongBan</td>
+                    <td>
+                        <a asp-action="Details" asp-route-intId="@objNhanVien.intMaNhanVien" class="btn btn-info btn-sm">Chi tiet</a>
+                        <a asp-action="Edit" asp-route-intId="@objNhanVien.intMaNhanVien" class="btn btn-warning btn-sm">Sua</a>
+                        <a asp-action="Delete" asp-route-intId="@objNhanVien.intMaNhanVien" class="btn btn-danger btn-sm">Xoa</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

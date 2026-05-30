@@ -1,0 +1,46 @@
+@model QuanLyNhanVien.Models.NhanVien
+@using QuanLyNhanVien.Enums
+
+@{
+    ViewData["Title"] = "Xoa nhan vien";
+}
+
+<h2 class="mb-3">Xac nhan xoa nhan vien</h2>
+
+<div class="alert alert-danger">
+    Ban co chac chan muon xoa nhan vien nay khong?
+</div>
+
+<div class="card" style="max-width: 600px;">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-4">Ma nhan vien</dt>
+            <dd class="col-sm-8">@Model.intMaNhanVien</dd>
+
+            <dt class="col-sm-4">Ten nhan vien</dt>
+            <dd class="col-sm-8">@Model.strTenNhanVien</dd>
+
+            <dt class="col-sm-4">Nam sinh</dt>
+            <dd class="col-sm-8">@Model.intNamSinh</dd>
+
+            <dt class="col-sm-4">Gioi tinh</dt>
+            <dd class="col-sm-8">@(Model.boolGioiTinh ? "Nam" : "Nu")</dd>
+
+            <dt class="col-sm-4">Luong</dt>
+            <dd class="col-sm-8">@Model.dblLuong.ToString("N0") VND</dd>
+
+            <dt class="col-sm-4">Trang thai</dt>
+            <dd class="col-sm-8">@((TrangThaiNhanVien)Model.intTrangThai)</dd>
+
+            <dt class="col-sm-4">Phong ban</dt>
+            <dd class="col-sm-8">@Model.objPhongBan?.strTenPhongBan</dd>
+        </dl>
+    </div>
+</div>
+
+<form asp-action="Delete" asp-route-intId="@Model.intMaNhanVien" method="post" class="mt-3">
+    <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-danger">Xoa</button>
+        <a asp-action="Index" class="btn btn-secondary">Huy</a>
+    </div>
+</form>
