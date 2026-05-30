@@ -82,9 +82,9 @@
                     <td>@objNhanVien.intMaNhanVien</td>
                     <td>@objNhanVien.strTenNhanVien</td>
                     <td>@objNhanVien.intNamSinh</td>
-                    <td>@(objNhanVien.boolGioiTinh ? "Nam" : "Nu")</td>
-                    <td>@objNhanVien.dblLuong.ToString("N0") VND</td>
-                    <td>@((TrangThaiNhanVien)objNhanVien.intTrangThai)</td>
+                    <td>@Html.RenderGioiTinh(objNhanVien.boolGioiTinh)</td>
+                    <td>@objNhanVien.dblLuong.ToCurrencyVN()</td>
+                    <td>@Html.RenderTrangThai(objNhanVien.intTrangThai)</td>
                     <td>@objNhanVien.objPhongBan?.strTenPhongBan</td>
                     <td>
                         <a asp-action="Details" asp-route-intId="@objNhanVien.intMaNhanVien" class="btn btn-info btn-sm">Chi tiet</a>

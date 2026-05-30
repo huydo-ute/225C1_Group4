@@ -20,13 +20,13 @@
             <dd class="col-sm-8">@Model.intNamSinh</dd>
 
             <dt class="col-sm-4">Gioi tinh</dt>
-            <dd class="col-sm-8">@(Model.boolGioiTinh ? "Nam" : "Nu")</dd>
+            <dd class="col-sm-8">@Html.RenderGioiTinh(Model.boolGioiTinh)</dd>
 
             <dt class="col-sm-4">Luong</dt>
-            <dd class="col-sm-8">@Model.dblLuong.ToString("N0") VND</dd>
+            <dd class="col-sm-8">@Model.dblLuong.ToCurrencyVN()</dd>
 
             <dt class="col-sm-4">Trang thai</dt>
-            <dd class="col-sm-8">@((TrangThaiNhanVien)Model.intTrangThai)</dd>
+            <dd class="col-sm-8">@Html.RenderTrangThai(Model.intTrangThai)</dd>
 
             <dt class="col-sm-4">Phong ban</dt>
             <dd class="col-sm-8">@Model.objPhongBan?.strTenPhongBan</dd>
