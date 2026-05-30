@@ -1,5 +1,4 @@
 @model QuanLyNhanVien.ViewModels.NhanVienIndexViewModel
-@using QuanLyNhanVien.Enums
 
 @{
     ViewData["Title"] = "Danh sach nhan vien";
@@ -40,8 +39,9 @@
     </div>
 </form>
 
-<div class="mb-3">
+<div class="mb-3 d-flex justify-content-between align-items-center">
     <a asp-action="Create" class="btn btn-success">+ Them nhan vien</a>
+    <span class="text-muted">Tong so: <strong>@Model.lstNhanVien.Count</strong> nhan vien</span>
 </div>
 
 <table class="table table-bordered table-hover">

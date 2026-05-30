@@ -1,8 +1,20 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+@{
+    ViewData["Title"] = "Trang chu";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center mb-4">
+    <h1 class="display-5">He thong Quan Ly Nhan Vien</h1>
+    <p class="text-muted">Quan ly thong tin nhan vien va phong ban</p>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <div class="card text-center shadow-sm">
+            <div class="card-body py-4">
+                <h5 class="card-title">Nhan Vien</h5>
+                <p class="card-text text-muted">Xem, them, sua, xoa thong tin nhan vien</p>
+                <a asp-controller="NhanVien" asp-action="Index" class="btn btn-primary">Quan ly nhan vien</a>
+            </div>
+        </div>
+    </div>
 </div>

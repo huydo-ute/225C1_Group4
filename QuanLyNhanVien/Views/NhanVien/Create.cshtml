@@ -19,7 +19,7 @@
 
             <div class="mb-3">
                 <label asp-for="intNamSinh" class="form-label">Nam sinh</label>
-                <input asp-for="intNamSinh" class="form-control" type="number" />
+                <input asp-for="intNamSinh" class="form-control" type="number" min="1950" max="2010" placeholder="VD: 1995" />
                 <span asp-validation-for="intNamSinh" class="text-danger"></span>
             </div>
 
