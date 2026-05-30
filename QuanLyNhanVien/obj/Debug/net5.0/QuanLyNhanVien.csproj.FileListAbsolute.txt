@@ -144,3 +144,8 @@ C:\Users\hungp\OneDrive\Documents\CODE\C#\New folder\QuanLyNhanVien\QuanLyNhanVi
 C:\Users\hungp\OneDrive\Documents\CODE\C#\New folder\QuanLyNhanVien\QuanLyNhanVien\obj\Debug\net5.0\QuanLyNhanVien.pdb
 C:\Users\hungp\OneDrive\Documents\CODE\C#\New folder\QuanLyNhanVien\QuanLyNhanVien\obj\Debug\net5.0\QuanLyNhanVien.genruntimeconfig.cache
 C:\Users\hungp\OneDrive\Documents\CODE\C#\New folder\QuanLyNhanVien\QuanLyNhanVien\obj\Debug\net5.0\ref\QuanLyNhanVien.dll
+C:\Users\1410h\source\repos\C#\QuanLyNhanVien\QuanLyNhanVien\obj\Debug\net5.0\Razor\Views\NhanVien\Create.cshtml.g.cs
+C:\Users\1410h\source\repos\C#\QuanLyNhanVien\QuanLyNhanVien\obj\Debug\net5.0\Razor\Views\NhanVien\Delete.cshtml.g.cs
+C:\Users\1410h\source\repos\C#\QuanLyNhanVien\QuanLyNhanVien\obj\Debug\net5.0\Razor\Views\NhanVien\Details.cshtml.g.cs
+C:\Users\1410h\source\repos\C#\QuanLyNhanVien\QuanLyNhanVien\obj\Debug\net5.0\Razor\Views\NhanVien\Edit.cshtml.g.cs
+C:\Users\1410h\source\repos\C#\QuanLyNhanVien\QuanLyNhanVien\obj\Debug\net5.0\Razor\Views\NhanVien\Index.cshtml.g.cs
